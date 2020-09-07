@@ -9,7 +9,7 @@
       <div class="carousel-item bg-gray">
         <div class="text-center my-3 position-relative">
           <img class="" src="@/assets/images/carousel2fix.png" alt="" />
-          <nuxt-link to="/post">
+          <nuxt-link to="/addpost">
             <button
               class="position-absolute btn-absolute btn btn-success px-5 d-lg-block d-xl-block d-sm-none d-md-none d-xs-none"
             >

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 mx-auto bg-gray">
-        <h1 class="text-center">กฏหมายอยู่ในขั้นตอนที่ 2</h1>
+        <h1 class="text-center">กฏหมายอยู่ในขั้นตอนที่ 1</h1>
         <CardInitLaw
           v-for="(law, i) in laws20"
           :key="law.law_no"

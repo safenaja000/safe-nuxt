@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="row">
         <div
-          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto bg-gray shadow-sm border"
+          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto bg-gray shadow-sm border hvr-grow-shadow"
         >
           <div class="row">
             <div class="col-lg-12">
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div
-          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray"
+          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray hvr-grow-shadow"
         >
           <div class="row">
             <div class="col-lg-12">
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div
-          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray"
+          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray hvr-grow-shadow"
         >
           <div class="row">
             <div class="col-lg-12">
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div
-          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray"
+          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray hvr-grow-shadow"
         >
           <div class="row">
             <div class="col-lg-12">
@@ -99,7 +99,7 @@
           </div>
         </div>
         <div
-          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray"
+          class="col-xl-2 col-lg-3 m-3 col-md-4 col-sm-6 mx-auto shadow-sm border bg-gray hvr-grow-shadow"
         >
           <div class="row">
             <div class="col-lg-12">

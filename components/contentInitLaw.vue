@@ -37,7 +37,11 @@
     <hr />
     <div v-if="isMember" class="ml-auto text-right">
       <div class="text-right d-inline-block" style="cursor: pointer;">
-        <a class @click="showConfirm(idcard, post.law_no)">
+        <a
+          class="hvr-buzz-out"
+          title="โหวดเห็นด้วย"
+          @click="showConfirm(idcard, post.law_no)"
+        >
           <i
             class="far fa-check-circle"
             style="font-size: 50px; color: green;"
@@ -45,7 +49,7 @@
         </a>
       </div>
       <div class="text-right d-inline-block">
-        <a class>
+        <a class="hvr-buzz-out">
           <i
             class="fas fa-times-circle"
             style="font-size: 50px; color: red;"
@@ -55,7 +59,11 @@
     </div>
     <div v-else class="ml-auto text-right">
       <div class="text-right d-inline-block">
-        <a class @click="lawAcceptConfirm(post.law_no)">
+        <a
+          class="hvr-buzz-out"
+          title="อนุมัติ"
+          @click="lawAcceptConfirm(post.law_no)"
+        >
           <i
             class="far fa-check-circle"
             style="font-size: 50px; color: green;"
@@ -63,7 +71,7 @@
         </a>
       </div>
       <div class="text-right d-inline-block">
-        <a class @click="lawUnAcceptConfirm(post.law_no)">
+        <a class="hvr-buzz-out" @click="lawUnAcceptConfirm(post.law_no)">
           <i
             class="fas fa-times-circle"
             style="font-size: 50px; color: red;"

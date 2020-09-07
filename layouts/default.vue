@@ -39,35 +39,37 @@
         <div class="col-lg-12">
           <div class="row">
             <nuxt-link
-              class="nav-link text-white col-12 col-lg-2 text-center"
+              class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               to="/"
             >
               หน้าแรก
             </nuxt-link>
             <nuxt-link
-              class="nav-link text-white col-12 col-lg-2 text-center"
+              class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               to="/post"
             >
               ผู้ริเริ่มเสนอกฏหมาย
             </nuxt-link>
             <nuxt-link
               to="/searchPost"
-              class="nav-link text-white col-12 col-lg-2 text-center"
+              class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
               >ตรวจสอบสถานะ</nuxt-link
             >
-            <a class="nav-link text-white col-12 col-lg-2 text-center" href
+            <a
+              class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
+              href
               >ประกาศรายชื่อ</a
             >
             <nuxt-link
               to="/lawknowledge"
-              class="nav-link text-white col-12 col-lg-2 text-center"
+              class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
               >ข่าวสารและสาระน่ารู้</nuxt-link
             >
             <nuxt-link
               to="/"
-              class="nav-link text-white col-12 col-lg-2 text-center"
+              class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
               >ร่างกฏหมายของท่าน</nuxt-link
             >

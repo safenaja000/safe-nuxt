@@ -7,7 +7,9 @@
           <div v-else class="col-lg-6" style="background-color: #ffffff;"></div>
         </div>
         <div class="col-lg-6 px-5 mx-auto">
-          <div class="col-lg-12 p-3 bg-white shadow-sm rounded">
+          <div
+            class="col-lg-12 p-3 bg-white shadow-sm rounded mb-3 hvr-bounce-out"
+          >
             <nuxt-link to="/addpost" class="text-decoration-none" href>
               <h1 class="text-center text-dark m-4">+ สร้างข้อเสนอ</h1>
             </nuxt-link>

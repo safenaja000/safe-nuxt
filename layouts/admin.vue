@@ -14,7 +14,7 @@
         </v-list-item>
         <v-list-item class="text-decoration-none" link to="/admin/lawbegin">
           <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>*</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>
@@ -24,10 +24,18 @@
         </v-list-item>
         <v-list-item class="text-decoration-none" link to="/admin/lawapprove">
           <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>*</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>ร่างกฏหมาย ขั้นตอนที่ 3</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item class="text-decoration-none" link to="/admin/userapprove">
+          <v-list-item-action>
+            <v-icon>*</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>ผู้ใช้ที่ยืนยันตัวตนไม่ผ่าน</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="index <= (isMember ? itemlenght : 999)"
-    class="col-lg-12 p-3"
+    class="col-lg-12 hvr-shutter-out-horizontal"
     @click="handleClickCard(law.law_no)"
   >
     <div
