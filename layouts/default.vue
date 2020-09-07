@@ -50,17 +50,26 @@
             >
               ผู้ริเริ่มเสนอกฏหมาย
             </nuxt-link>
-            <a class="nav-link text-white col-12 col-lg-2 text-center" href
-              >ความรู้ด้านกฏหมาย</a
-            >
-            <a class="nav-link text-white col-12 col-lg-2 text-center" href
-              >ตรวจสอบสถานะ</a
+            <nuxt-link
+              to="/searchPost"
+              class="nav-link text-white col-12 col-lg-2 text-center"
+              href
+              >ตรวจสอบสถานะ</nuxt-link
             >
             <a class="nav-link text-white col-12 col-lg-2 text-center" href
               >ประกาศรายชื่อ</a
             >
-            <a class="nav-link text-white col-12 col-lg-2 text-center" href
-              >กฏหมายที่เกี่ยวข้องและสาระน่ารู้</a
+            <nuxt-link
+              to="/lawknowledge"
+              class="nav-link text-white col-12 col-lg-2 text-center"
+              href
+              >ข่าวสารและสาระน่ารู้</nuxt-link
+            >
+            <nuxt-link
+              to="/"
+              class="nav-link text-white col-12 col-lg-2 text-center"
+              href
+              >ร่างกฏหมายของท่าน</nuxt-link
             >
           </div>
         </div>

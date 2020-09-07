@@ -2,8 +2,10 @@
   <div>
     <div class="container-fluid my-5">
       <div class="row p-4 bg-gray">
-        <ContentInitLaw v-if="post != null" :post="post" />
-        <div v-else class="col-lg-6" style="background-color: #ffffff;"></div>
+        <div class="col-lg-6">
+          <ContentInitLaw v-if="post != null" :post="post" :isMember="true" />
+          <div v-else class="col-lg-6" style="background-color: #ffffff;"></div>
+        </div>
         <div class="col-lg-6 px-5 mx-auto">
           <div class="col-lg-12 p-3 bg-white shadow-sm rounded">
             <nuxt-link to="/addpost" class="text-decoration-none" href>
@@ -20,6 +22,13 @@
             />
             <!-- <v-pagination v-model="page" :length="length"></v-pagination> -->
           </div>
+          <div class="col-lg-12">
+            <nuxt-link class="text-center text-decoration-none" to="/posts"
+              ><p class="bg-white py-3 rounded-pill">
+                ดูการร่างกฏหมายของผู้เสนอทั้งหมด
+              </p>
+            </nuxt-link>
+          </div>
         </div>
       </div>
     </div>
@@ -35,7 +44,7 @@ export default {
     ContentInitLaw,
   },
   async asyncData({ $axios }) {
-    const res = await $axios.$get('/law?type=20')
+    const res = await $axios.$get('/law?type=1')
     return {
       laws: res.data,
       post: res.data[0],

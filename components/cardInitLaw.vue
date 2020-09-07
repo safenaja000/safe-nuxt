@@ -1,11 +1,11 @@
 <template>
   <div
-    v-if="index < itemlenght"
+    v-if="index <= (isMember ? itemlenght : 999)"
     class="col-lg-12 p-3"
     @click="handleClickCard(law.law_no)"
   >
     <div
-      class="row p-1 m-2 bg-white shadow-sm rounded"
+      class="row p-3 m-2 bg-white shadow-sm rounded"
       style="cursor: pointer;"
     >
       <div class="col-lg-2">
@@ -32,9 +32,10 @@
             <span class="text-secondary">
               {{ law.proposed_date }}
             </span>
-            <a class="text-right" href>
-              <i class="far fa-comments text-dark"></i>
-            </a>
+            <span class="text-right">
+              {{ law.no_of_supporter }}/{{ law.law_status == 1 ? 20 : 10 }}
+              คน
+            </span>
           </div>
         </div>
       </div>
@@ -46,12 +47,13 @@
 export default {
   data() {
     return {
-      itemlenght: 6,
+      itemlenght: 4,
     }
   },
   props: {
     law: { type: Object },
     index: { type: Number },
+    isMember: { type: Boolean },
   },
   methods: {
     handleClickCard(id) {

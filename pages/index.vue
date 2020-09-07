@@ -125,9 +125,11 @@
     </div>
     <div class="container-fluid my-5">
       <div class="row p-4 bg-gray">
-        <ContentInitLaw v-if="post != null" :post="post" />
-        <div v-else class="col-lg-6" style="background-color: #ffffff;"></div>
-        <div class="col-lg-6 row px-5 mx-auto">
+        <div class="col-lg-6">
+          <ContentInitLaw v-if="post != null" :post="post" :isMember="true" />
+          <div v-else class="col-lg-6" style="background-color: #ffffff;"></div>
+        </div>
+        <div class="col-lg-6 px-5 mx-auto">
           <div class="col-lg-12 mt-3">
             <h5>
               <b>ข้อเสนอที่แนะนำ</b>
@@ -142,6 +144,13 @@
               :index="i"
               @clickCardInitLaw="getPost"
             />
+          </div>
+          <div class="col-lg-12">
+            <nuxt-link class="text-center text-decoration-none" to="/posts"
+              ><p class="bg-white py-3 rounded-pill">
+                ดูการร่างกฏหมายของผู้เสนอทั้งหมด
+              </p></nuxt-link
+            >
           </div>
         </div>
       </div>
@@ -160,10 +169,17 @@ export default {
     ContentInitLaw,
   },
   async asyncData({ $axios }) {
-    const res = await $axios.$get('/law?type=10000')
+    const res = await $axios.$get('/law')
+    const data = res.data.filter(
+      (law) =>
+        law.law_status === 1 ||
+        law.law_status === 2 ||
+        law.law_status === 3 ||
+        law.law_status === 4
+    )
     return {
-      laws: res.data,
-      post: res.data[0],
+      laws: data,
+      post: data[0],
     }
   },
   data() {

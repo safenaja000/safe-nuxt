@@ -70,13 +70,12 @@
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 12 ? '#80000' : '#e4e4e4'"
+        :color="status == 12 ? '#FF0000' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
             <p>
-              <b>ขั้นตอนที่ 1</b> ผู้ริเริ่มเสนอกฏหมาย 20
-              คนยื่นเรื่องพร้อมร่างกฏหมาย
+              <b>ไม่ผ่านอารอนุมัติ หมวด 3 หมวด 5</b>
             </p>
           </v-card-title>
         </v-card>
@@ -84,13 +83,12 @@
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 13 ? '#80000' : '#e4e4e4'"
+        :color="status == 13 ? '#FF0000' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
             <p>
-              <b>ขั้นตอนที่ 1</b> ผู้ริเริ่มเสนอกฏหมาย 20
-              คนยื่นเรื่องพร้อมร่างกฏหมาย
+              <b>ถูกตัดออกเพราะมีการใช้สิทธิไม่ถูกต้อง</b>
             </p>
           </v-card-title>
         </v-card>
@@ -98,13 +96,12 @@
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 14 ? '#80000' : '#e4e4e4'"
+        :color="status == 14 ? '#FF0000' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
             <p>
-              <b>ขั้นตอนที่ 1</b> ผู้ริเริ่มเสนอกฏหมาย 20
-              คนยื่นเรื่องพร้อมร่างกฏหมาย
+              <b>ประธานรัฐสภา ไม่อนุมัติ</b>
             </p>
           </v-card-title>
         </v-card>

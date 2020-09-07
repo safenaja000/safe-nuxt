@@ -74,12 +74,6 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    ['@nuxtjs/vuetify', {
-      theme: {
-        dark: false,
-      },
-    }]
-
   ],
   /*
    ** Axios module configuration

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="post != null"
-    class="col-lg-6 rounded"
+    class="col-lg-12 rounded mx-auto"
     style="background-color: #ffffff;"
   >
     <h3 class="text-center my-3">
@@ -25,7 +25,7 @@
     <hr />
     <h4>
       ผู้สนับสนุน: {{ post.no_of_supporter }}/{{
-        post.law_status == 3 ? 10000 : 20
+        post.law_status == 1 ? 20 : 10000
       }}
       คน
     </h4>
@@ -35,21 +35,39 @@
       {{ post.proposed_date }}
     </p>
     <hr />
-    <div class="ml-auto text-right">
-      <div class="text-right d-inline-block">
-        <a class>
-          <img
-            src="@/assets/images/accept.png"
-            width="50px"
-            alt
-            style="cursor: pointer;"
-            @click="showConfirm(idcard, post.law_no)"
-          />
+    <div v-if="isMember" class="ml-auto text-right">
+      <div class="text-right d-inline-block" style="cursor: pointer;">
+        <a class @click="showConfirm(idcard, post.law_no)">
+          <i
+            class="far fa-check-circle"
+            style="font-size: 50px; color: green;"
+          ></i>
         </a>
       </div>
       <div class="text-right d-inline-block">
         <a class>
-          <img src="@/assets/images/unaccept.png" width="50px" alt />
+          <i
+            class="fas fa-times-circle"
+            style="font-size: 50px; color: red;"
+          ></i>
+        </a>
+      </div>
+    </div>
+    <div v-else class="ml-auto text-right">
+      <div class="text-right d-inline-block">
+        <a class @click="lawAcceptConfirm(post.law_no)">
+          <i
+            class="far fa-check-circle"
+            style="font-size: 50px; color: green;"
+          ></i>
+        </a>
+      </div>
+      <div class="text-right d-inline-block">
+        <a class @click="lawUnAcceptConfirm(post.law_no)">
+          <i
+            class="fas fa-times-circle"
+            style="font-size: 50px; color: red;"
+          ></i>
         </a>
       </div>
     </div>
@@ -86,6 +104,13 @@
 import Swal from 'sweetalert2'
 import Timeline from '@/components/timeline'
 export default {
+  components: {
+    Timeline,
+  },
+  props: {
+    post: { type: Object },
+    isMember: { type: Boolean },
+  },
   data() {
     return {
       idcard: '',
@@ -95,12 +120,6 @@ export default {
     if (localStorage.getItem('idcard') !== '') {
       this.idcard = localStorage.getItem('idcard')
     }
-  },
-  components: {
-    Timeline,
-  },
-  props: {
-    post: Object,
   },
   methods: {
     showConfirm(cardid, id) {
@@ -122,6 +141,42 @@ export default {
     async postAccept(cardid, id) {
       const res = await this.$axios.$post(`/law/${id}`, {
         supporter_idcard: cardid,
+      })
+      console.log(res)
+    },
+    lawAcceptConfirm(id) {
+      Swal.fire({
+        title: 'Enter your topic',
+        input: 'text',
+        showCancelButton: true,
+        inputValidator: (value) => {
+          if (!value) {
+            return 'You need to write something!'
+          } else {
+            this.lawCheck(true, id, value)
+          }
+        },
+      })
+    },
+    lawUnAcceptConfirm(id) {
+      Swal.fire({
+        title: 'Enter your topic',
+        input: 'text',
+        showCancelButton: true,
+        inputValidator: (value) => {
+          if (!value) {
+            return 'You need to write something!'
+          } else {
+            this.lawCheck(false, id, value)
+          }
+        },
+      })
+    },
+    async lawCheck(approve, id, topic) {
+      const res = await this.$axios.$post(`/approvement`, {
+        approve,
+        topic,
+        law_no: id,
       })
       console.log(res)
     },

@@ -18,9 +18,9 @@
           </nuxt-link>
         </div>
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item bg-gray">
         <div class="text-center my-3">
-          <img class src="http://via.placeholder.com/1006x419" alt />
+          <img class src="@/assets/images/carousel3.png" alt />
         </div>
       </div>
     </div>
