@@ -14,15 +14,31 @@
     </div>
     <div class="col-lg-6 px-5 mx-auto">
       <div class="row">
-        <h3>ผู้ที่อยู่ในขั้นตอน ที่ 2</h3>
-        <CardInitLaw
-          v-for="(law, i) in laws"
-          :key="law.law_no"
-          :law="law"
-          :index="i"
-          @clickCardInitLaw="getPost"
-          :isMember="false"
-        />
+        <h3 class="text-center col-lg-8">ผู้ที่อยู่ในขั้นตอน ที่ 2</h3>
+        <div class="col-lg-4 ml-auto">
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+        </div>
+        <div class="col-lg-12">
+          <v-data-table
+            :headers="headers"
+            class="elevation-1"
+            :items="laws"
+            :search="search"
+          >
+            <template v-slot:item.proposed_date="{ item }">
+              <span>{{ new Date(item.proposed_date).toLocaleString() }}</span>
+            </template>
+            <template v-slot:item.approve="{ item }">
+              <v-btn color="success" @click="getPost(item)">ตรวจสอบ</v-btn>
+            </template>
+          </v-data-table>
+        </div>
       </div>
     </div>
   </div>
@@ -38,22 +54,30 @@ export default {
   },
   layout: 'admin',
   async asyncData({ $axios }) {
-    const res = await $axios.$get('/law?type=1')
+    const res = await $axios.$get('/law?type=2')
     return {
       laws: res.data, // .filter((law) => law.law_status > 1),
     }
   },
   data() {
     return {
+      headers: [
+        { text: 'หัวข้อ', value: 'law_content_1', align: 'center' },
+        { text: 'ผู้ริเริ่ม', value: 'proposer_name', align: 'left' },
+        { text: 'เวลาที่สร้าง', value: 'proposed_date', align: 'center' },
+        { text: 'จำนวน', value: 'no_of_supporter', align: 'center' },
+        { text: 'ตรวจสอบ', value: 'approve', align: 'center' },
+      ],
       laws: [],
+      search: '',
       post: null,
     }
   },
   methods: {
-    async getPost(id) {
-      const res = await this.$axios.$get(`/law/${id}`)
+    async getPost(item) {
+      const res = await this.$axios.$get(`/law/${item.law_no}`)
       this.post = res.data
-      console.log(res)
+      console.log(this.post)
     },
   },
 }

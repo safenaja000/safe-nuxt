@@ -39,6 +39,11 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn class="text-decoration-none" block to="/">กลับ</v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
 
     <v-app-bar app color="indigo" dark>

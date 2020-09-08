@@ -32,7 +32,7 @@
     <hr />
     <p class="text-left">
       <b>วันที่สร้าง</b>
-      {{ post.proposed_date }}
+      {{ new Date(post.proposed_date).toLocaleString() }}
     </p>
     <hr />
     <div v-if="isMember" class="ml-auto text-right">

@@ -30,7 +30,7 @@
           </div>
           <div class="col-lg-6">
             <span class="text-secondary">
-              {{ law.proposed_date }}
+              {{ new Date(law.proposed_date).toLocaleString() }}
             </span>
             <span class="text-right">
               {{ law.no_of_supporter }}/{{ law.law_status == 1 ? 20 : 10 }}

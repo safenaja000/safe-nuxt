@@ -56,10 +56,11 @@
               href
               >ตรวจสอบสถานะ</nuxt-link
             >
-            <a
+            <nuxt-link
               class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
-              >ประกาศรายชื่อ</a
+              to="/lawpass"
+              >ร่างกฏหมายที่ผ่านตามขั้นตอน</nuxt-link
             >
             <nuxt-link
               to="/lawknowledge"
@@ -68,7 +69,7 @@
               >ข่าวสารและสาระน่ารู้</nuxt-link
             >
             <nuxt-link
-              to="/"
+              to="/mylaws"
               class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
               >ร่างกฏหมายของท่าน</nuxt-link
