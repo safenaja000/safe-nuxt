@@ -19,7 +19,7 @@ export default {
       post: null,
     }
   },
-  mounted() {
+  created() {
     this.getPost(this.$route.params.id)
   },
   methods: {

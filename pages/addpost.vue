@@ -61,7 +61,7 @@ export default {
         law_content_2: this.law_content_2,
         law_content_3: this.law_content_3,
         law_content_4: this.law_content_4,
-        proposer_idcard: 115563322118,
+        proposer_idcard: 1349900965669,
       })
       console.log(res)
     },

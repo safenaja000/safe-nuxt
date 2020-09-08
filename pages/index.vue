@@ -126,8 +126,14 @@
     <div class="container-fluid my-5">
       <div class="row p-4 bg-gray">
         <div class="col-lg-6">
-          <ContentInitLaw v-if="post != null" :post="post" :isMember="true" />
-          <div v-else class="col-lg-6" style="background-color: #ffffff;"></div>
+          <div class="row">
+            <ContentInitLaw v-if="post != null" :post="post" :isMember="true" />
+            <div
+              v-else
+              class="col-lg-6"
+              style="background-color: #ffffff;"
+            ></div>
+          </div>
         </div>
         <div class="col-lg-6 px-5 mx-auto">
           <div class="col-lg-12 mt-3">
@@ -143,10 +149,11 @@
               :law="law"
               :index="i"
               @clickCardInitLaw="getPost"
+              :isMember="true"
             />
           </div>
           <div class="col-lg-12">
-            <nuxt-link class="text-center text-decoration-none" to="/posts"
+            <nuxt-link class="text-center text-decoration-none" to="/searchPost"
               ><p class="bg-white py-3 rounded-pill">
                 ดูการร่างกฏหมายของผู้เสนอทั้งหมด
               </p></nuxt-link
@@ -201,10 +208,9 @@ export default {
     async getPost(id) {
       const res = await this.$axios.$get(`/law/${id}`)
       this.post = res.data
-      console.log(res.data)
     },
   },
 }
 </script>
 
-<style></style>
+<style scoped></style>

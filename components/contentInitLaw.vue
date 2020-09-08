@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="post != null"
-    class="col-lg-12 rounded mx-auto"
+    class="col-lg-12 rounded"
     style="background-color: #ffffff;"
   >
     <h3 class="text-center my-3">
@@ -36,7 +36,15 @@
     </p>
     <hr />
     <div v-if="isMember" class="ml-auto text-right">
-      <div class="text-right d-inline-block" style="cursor: pointer;">
+      <div
+        v-if="
+          post.law_status !== 12 &&
+          post.law_status !== 14 &&
+          post.law_status !== 4
+        "
+        class="text-right d-inline-block"
+        style="cursor: pointer;"
+      >
         <a
           class="hvr-buzz-out"
           title="โหวดเห็นด้วย"
@@ -48,7 +56,14 @@
           ></i>
         </a>
       </div>
-      <div class="text-right d-inline-block">
+      <div
+        v-if="
+          post.law_status !== 12 &&
+          post.law_status !== 14 &&
+          post.law_status !== 4
+        "
+        class="text-right d-inline-block"
+      >
         <a class="hvr-buzz-out">
           <i
             class="fas fa-times-circle"
@@ -80,7 +95,7 @@
       </div>
     </div>
     <hr />
-    <div class="col-lg-10 ml-auto">
+    <div class="col-lg-12">
       <Timeline :status="post.law_status" />
     </div>
     <!-- <div class="row">

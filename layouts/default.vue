@@ -59,8 +59,8 @@
             <nuxt-link
               class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
-              to="/lawpass"
-              >ร่างกฏหมายที่ผ่านตามขั้นตอน</nuxt-link
+              to="/addpost"
+              >เริ่มร่างกฏหมาย</nuxt-link
             >
             <nuxt-link
               to="/lawknowledge"

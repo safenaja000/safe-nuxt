@@ -25,7 +25,7 @@
             <!-- <v-pagination v-model="page" :length="length"></v-pagination> -->
           </div>
           <div class="col-lg-12">
-            <nuxt-link class="text-center text-decoration-none" to="/posts"
+            <nuxt-link class="text-center text-decoration-none" to="/searchPost"
               ><p class="bg-white py-3 rounded-pill">
                 ดูการร่างกฏหมายของผู้เสนอทั้งหมด
               </p>

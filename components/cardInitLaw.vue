@@ -33,7 +33,7 @@
               {{ new Date(law.proposed_date).toLocaleString() }}
             </span>
             <span class="text-right">
-              {{ law.no_of_supporter }}/{{ law.law_status == 1 ? 20 : 10 }}
+              {{ law.no_of_supporter }}/{{ law.law_status == 1 ? 20 : 10000 }}
               คน
             </span>
           </div>
@@ -47,7 +47,7 @@
 export default {
   data() {
     return {
-      itemlenght: 4,
+      itemlenght: 3,
     }
   },
   props: {
