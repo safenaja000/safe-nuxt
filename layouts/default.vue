@@ -90,7 +90,10 @@
             ></i>
           </a>
           <a class="text-right pr-2" href>
-            <i class="fab fa-line text-success" style="font-size: 2rem;"></i>
+            <i
+              class="fab fa-line text-success"
+              style="font-size: 2rem;"
+            ></i>
           </a>
         </div>
       </div>

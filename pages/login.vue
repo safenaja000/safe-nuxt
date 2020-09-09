@@ -8,9 +8,7 @@
             <h3
               style="background-color: #f7f7f7;"
               class="d-inline-block rounded m-3 p-2"
-            >
-              ร่วมแสดงความคิดเห็น เข้าชื่อเสนอร่างกฏหมาย
-            </h3>
+            >ร่วมแสดงความคิดเห็น เข้าชื่อเสนอร่างกฏหมาย</h3>
           </div>
           <div class="col-lg-8 ml-auto">
             <div class="form-group">
@@ -35,9 +33,7 @@
             </div>
             <div class="form-group">
               <button class="d-inline-block btn btn-danger">เข้าสู่ระบบ</button>
-              <nuxt-link class="bg-gray btn" to="/register"
-                >สมัครสมาชิก</nuxt-link
-              >
+              <nuxt-link class="bg-gray btn" to="/register">สมัครสมาชิก</nuxt-link>
             </div>
           </div>
         </div>
@@ -45,3 +41,22 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  // data(){
+  //   return{
+  //     username:'',
+  //     password:''
+  //   }
+  // },
+  // methods:{
+  //   handleclikedlogin(){
+  //     const res = this.$axios.post('')
+  //   }
+  // }
+}
+</script>
+
+<style>
+</style>

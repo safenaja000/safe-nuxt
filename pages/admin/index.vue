@@ -12,9 +12,16 @@
           ></v-text-field>
         </div>
         <div class="col-lg-12">
-          <v-data-table :headers="headers" class="elevation-1" :items="users" :search="search" >
-            <template v-slot:item.edit="{item}">
-              <v-btn color="success">Approve</v-btn>
+          <v-data-table
+            :headers="headers"
+            class="elevation-1"
+            :items="users"
+            :search="search"
+          >
+            <template v-slot:item.edit="{ item }">
+              <v-btn color="success" @click="clicked(item.id_card)"
+                >Approve</v-btn
+              >
             </template>
           </v-data-table>
         </div>
@@ -24,33 +31,60 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 export default {
   layout: 'admin',
+  async asyncData({ $axios }) {
+    const res = await $axios.$get('/member')
+    return {
+      users: res.data.filter((user) => user.user_status !== 7),
+    }
+  },
   data() {
     return {
       headers: [
-        { text: 'id', value: 'id', align: 'center',width:'1em' },
-        { text: 'name', value: 'name', align: 'left',width:'3em' },
-        { text: 'email', value: 'email', align: 'center',width:'3em' },
-        { text: 'Edit', value: 'edit', align: 'center',width:'2em' },
+        { text: 'username', value: 'username', align: 'center', width: '1em' },
+        { text: 'name', value: 'name', align: 'left', width: '3em' },
+        {
+          text: 'email',
+          value: 'email_address',
+          align: 'center',
+          width: '3em',
+        },
+        { text: 'Edit', value: 'edit', align: 'center', width: '2em' },
       ],
       users: [],
       search: '',
     }
   },
-  mounted() {
-    this.getAllUsers()
-  },
   methods: {
-    async getAllUsers() {
-      const res = await this.$axios.get(
-        'https://jsonplaceholder.typicode.com/users'
-      )
-      this.users = res.data
-      console.log(res.data)
+    clicked(idCard) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Approve it!',
+      }).then((result) => {
+        if (result.value) {
+          Swal.fire('Send!', 'Your request Successful', 'success')
+          this.approveUser(idCard)
+        }
+      })
     },
-    clicked(all) {
-      console.log(all)
+    async approveUser(idCard) {
+      const res = await this.$axios.$post(`/member/${idCard}`, {
+        user_status: 7,
+      })
+      if (res.status === 'OK') {
+        this.getAllUsers()
+      }
+    },
+    async getAllUsers() {
+      const res = await this.$axios.$get('/member')
+      this.users = res.data.filter((user) => user.user_status !== 7)
     },
   },
 }

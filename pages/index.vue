@@ -195,18 +195,11 @@ export default {
       post: null,
     }
   },
-  // mounted() {
-  //   this.getAllType1000Law()
-  // },
   methods: {
-    // async getAllType1000Law() {
-    //   const res = await this.$axios.$get('/law?type=10000')
-    //   this.laws = res.data
-    //   this.post = res.data[0]
-    //   console.log(this.laws)
-    // },
     async getPost(id) {
-      const res = await this.$axios.$get(`/law/${id}`)
+      const res = await this.$axios.$get(
+        `/law/${id}?id_card=${localStorage.getItem('idcard')}`
+      )
       this.post = res.data
     },
   },

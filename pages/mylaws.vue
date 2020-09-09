@@ -22,8 +22,20 @@
           </template>
           <template v-slot:item.law_status="{ item }">
             <span class="text-success">{{
-              item.law_status == 5 ? 'เตรียมเข้าการประชุม' : 'Error'
-            }}</span>
+                  item.law_status == 1
+                    ? 'ยังไม่ครบ 20 คน'
+                    : item.law_status == 2
+                    ? 'รอตรวจสอบตามรัฐธรรมนูญ'
+                    : item.law_status == 3
+                    ? 'ยังไม่ครบ 10000 คน'
+                    : item.law_status == 4
+                    ? 'รอประธานรัฐสภาตรวจสอบ'
+                    : item.law_status == 5
+                    ? 'เตรียมเข้าการประชุม'
+                    : item.law_status == 12
+                    ? 'ไม่ตรงตาม หมวด 3 หมวด 5'
+                    : 'Error'
+                }}</span>
           </template>
           <template v-slot:item.check="{ item }">
             <v-btn color="#64B5F6" @click="getPost(item)">ตรวจสอบ</v-btn>
@@ -36,12 +48,14 @@
 
 <script>
 export default {
-  async asyncData({ $axios }) {
-    const res = await $axios.$get('/law?type=5')
-    return {
-      laws: res.data,
-    }
-  },
+  // async asyncData({ $axios }) {
+  //   const res = await $axios.$get(
+  //     `/law?type=proposer&id_card=${localStorage.getItem('idcard')}`
+  //   )
+  //   return {
+  //     laws: res.data,
+  //   }
+  // },
   data() {
     return {
       laws: [],
@@ -56,10 +70,19 @@ export default {
       ],
     }
   },
+  mounted() {
+    this.getLaws()
+  },
   methods: {
     getPost(object) {
       // console.log(object)
       this.$router.push(`/post/${object.law_no}`)
+    },
+    async getLaws() {
+      const res = await this.$axios.$get(
+        `/law?type=proposer&id_card=${localStorage.getItem('idcard')}`
+      )
+      this.laws = res.data
     },
   },
 }

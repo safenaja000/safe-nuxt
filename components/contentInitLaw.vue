@@ -40,7 +40,8 @@
         v-if="
           post.law_status !== 12 &&
           post.law_status !== 14 &&
-          post.law_status !== 4
+          post.law_status !== 4 &&
+          post.support !== false
         "
         class="text-right d-inline-block"
         style="cursor: pointer;"
