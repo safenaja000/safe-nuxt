@@ -1,7 +1,7 @@
 <template>
   <div v-if="post != null" class="col-lg-12 rounded" style="background-color: #ffffff;">
     <div class="text-center">
-      <img class="text-center" src="https://via.placeholder.com/300x300" alt />
+      <img class="text-center" src="@/assets/images/55444.png" alt />
     </div>
     <!-- <h3 class="text-center my-3">
       <b>{{ post.law_content_1 }}</b>

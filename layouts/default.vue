@@ -74,7 +74,7 @@
               >ร่างกฏหมายของท่าน</nuxt-link
             >
             <nuxt-link
-              to="/mylaws"
+              to="/question"
               class="nav-link text-white col-12 col-lg-2 text-center hvr-sweep-to-right"
               href
               >คำถามที่พบบ่อย</nuxt-link
@@ -86,7 +86,7 @@
     <Nuxt />
     <i
       class="fas fa-comment-dots position-fixed"
-      style="font-size: 5rem; right: 1; bottom: 0; color: #33fffc;"
+      style="font-size: 5rem; right: 0; bottom: 0; color: #33fffc;"
     ></i>
     <div class="container-fluid bg-dangerdark">
       <div class="row text-right ml-auto py-2">

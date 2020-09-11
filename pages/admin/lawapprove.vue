@@ -8,7 +8,6 @@
           class="col-lg-12"
           style="background-color: #ffffff; height: 100px;"
         >
-          <h1 class="text-center">เลือก ร่างกฏหมาย ที่จะ อนุมัติ/ไม่อนุมัติ</h1>
         </div>
       </div>
     </div>
@@ -35,7 +34,7 @@
               <span>{{ new Date(item.proposed_date).toLocaleString() }}</span>
             </template>
             <template v-slot:item.approve="{ item }">
-              <v-btn color="success" @click="getPost(item)">ตรวจสอบ</v-btn>
+              <v-btn color="success" @click="getPost(item)">แสดง</v-btn>
             </template>
           </v-data-table>
         </div>

@@ -10,7 +10,7 @@
     >
       <div class="col-lg-2">
         <div class="text-center">
-          <img class="w-75" src="http://via.placeholder.com/300x300" alt />
+          <img class="w-75" src="@/assets/images/logo.png" alt />
         </div>
       </div>
       <div class="col-lg-10">
