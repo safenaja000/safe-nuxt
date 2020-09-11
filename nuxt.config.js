@@ -80,6 +80,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: { baseURL: 'http://e-init-ay.herokuapp.com/api', },
+  // axios:{baseURL: 'http://10.10.171.218:5000/api'},
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

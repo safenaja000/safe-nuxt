@@ -54,7 +54,7 @@ export default {
   },
   layout: 'admin',
   async asyncData({ $axios }) {
-    const res = await $axios.$get('/law?type=3')
+    const res = await $axios.$get('/law')
     return {
       laws: res.data, // .filter((law) => law.law_status > 1),
     }

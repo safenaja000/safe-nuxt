@@ -18,7 +18,7 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>
-              ร่างกฏหมาย ขั้นตอนที่ 2
+              คำร้องขอจัดทำร่างกฏหมาย
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -27,16 +27,24 @@
             <v-icon>*</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>ร่างกฏหมาย ขั้นตอนที่ 3</v-list-item-title>
+            <v-list-item-title>ร่างกฏหมาย ทั้งหมด</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item class="text-decoration-none" link to="/admin/userapprove">
+        <v-list-item class="text-decoration-none" link to="/admin/addpostformlocal">
           <v-list-item-action>
             <v-icon>*</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>ผู้ใช้ที่ยืนยันตัวตนไม่ผ่าน</v-list-item-title>
+            <v-list-item-title>เพิ่มการเข้าด้วยระบบเก่า</v-list-item-title>
           </v-list-item-content>
+        </v-list-item>
+        <v-list-item class="text-decoration-none" link to="/admin/addpost">
+          <v-list-item-action>
+              <v-icon>*</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>เพิมร่างกฏหมาย</v-list-item-title>
+            </v-list-item-content>
         </v-list-item>
       </v-list>
       <template v-slot:append>

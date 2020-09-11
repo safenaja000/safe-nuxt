@@ -8,14 +8,14 @@
           class="col-lg-12"
           style="background-color: #ffffff; height: 100px;"
         >
-          <h1 class="text-center">เลือก ร่างกฏหมาย ที่จะ อนุมัติ/ไม่อนุมัติ</h1>
+          <h1 class="text-center">เลือกคำร้องที่ต้องการ</h1>
         </div>
       </div>
     </div>
     <div class="col-lg-6 px-5 mx-auto">
       <div class="row">
-        <h3 class="text-center col-lg-8">ผู้ที่อยู่ในขั้นตอน ที่ 2</h3>
-        <div class="col-lg-4 ml-auto">
+        <!-- <h3 class="text-center col-lg-8">ผู้ที่อยู่ในขั้นตอน ที่ 2</h3> -->
+        <div class="col-lg-12 ml-auto">
           <v-text-field
             v-model="search"
             append-icon="mdi-magnify"

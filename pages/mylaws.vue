@@ -27,7 +27,7 @@
                     : item.law_status == 2
                     ? 'รอตรวจสอบตามรัฐธรรมนูญ'
                     : item.law_status == 3
-                    ? 'ยังไม่ครบ 10000 คน'
+                    ? 'กฏหมายที่ร่างเสร็จสิ้น   '
                     : item.law_status == 4
                     ? 'รอประธานรัฐสภาตรวจสอบ'
                     : item.law_status == 5
@@ -80,7 +80,7 @@ export default {
     },
     async getLaws() {
       const res = await this.$axios.$get(
-        `/law?type=proposer&id_card=${localStorage.getItem('idcard')}`
+        `/law?type=3`
       )
       this.laws = res.data
     },
