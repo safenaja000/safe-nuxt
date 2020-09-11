@@ -227,9 +227,8 @@ export default {
     },
     lawAcceptConfirm(id) {
       Swal.fire({
-        title: 'Enter your topic',
-        input: 'text',
-        showCancelButton: true,
+        title: 'ยืนยันการส่ง',
+          showCancelButton: true,
         inputValidator: (value) => {
           if (!value) {
             return 'You need to write something!'
