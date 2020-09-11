@@ -25,7 +25,7 @@
           </button>
         </div>
       </nuxt-link>-->
-      <p>ยินดีต้อน คุณ ปาริดา หงพรทิพ</p>
+      <p>ยินดีต้อนรับ คุณวรรธนัย สาธุพันธ์</p>
       <div class="mx-auto d-md-none d-lg-none d-sm-block">
         <nuxt-link to="/login">
           <button class="btn rounded-pill btn-danger bg-dangerdark px-5">
