@@ -1,0 +1,2 @@
+Login เพื่อ เก็บ id_card_
+Api /law:id?id_card=xxxxxx

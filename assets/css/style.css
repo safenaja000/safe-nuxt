@@ -1,0 +1,15 @@
+* {
+  font-family: 'Kanit', sans-serif;
+}
+
+.bg-gray {
+  background: #c4c4c4;
+}
+
+.bg-dangerdark {
+  background-color: #7b0000;
+}
+
+.logo-nav {
+  width: 90px;
+}
