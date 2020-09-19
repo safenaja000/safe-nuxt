@@ -11,7 +11,7 @@
             class="col-lg-12 p-3 bg-white shadow-sm rounded mb-3 hvr-bounce-out"
           >
             <nuxt-link to="/addpost" class="text-decoration-none" href>
-              <h1 class="text-center text-dark m-4">+ สร้างข้อเสนอ</h1>
+              <h1 class="text-center text-dark m-4">+ คำร้องใหม่</h1>
             </nuxt-link>
           </div>
           <div class="row">

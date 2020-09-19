@@ -9,12 +9,12 @@
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 1 ? '#28a745' : '#e4e4e4'"
+        :color="status == 4 ? '#28a745' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
             <p>
-              <b>รวบรวมรายชื่อ จัดทำร่างกฏหมาย</b>
+              <b>ขั้นตอนที่ 1</b> กำลังเข้าชื่อ
             </p>
           </v-card-title>
         </v-card>
@@ -22,59 +22,59 @@
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 2 ? '#28a745' : '#e4e4e4'"
+        :color="status == 5 ? '#28a745' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
-            <p><b>อยู่ในขั้นตอนจัดทำร่าง</b></p>
+            <p><b>ขั้นตอนที่ 2</b> กำลังตรวจสอบ หมวด 3 และ 5 ตาม หมวด 3 หมวด 5</p>
           </v-card-title>
         </v-card>
       </v-timeline-item>
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 3 ? '#28a745' : '#e4e4e4'"
+        :color="status == 6 ? '#28a745' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
-            <p><b>จัดทำร่างกฏหมายเสร็จสิ้น</b></p>
-          </v-card-title>
-        </v-card>
-      </v-timeline-item>
-      <v-timeline-item
-        :small="true"
-        right="right"
-        :color="status == 4 ? '#28a745' : '#e4e4e4'"
-      >
-        <v-card class="elevation-2">
-          <v-card-title class="headline">
-            <p><b>เริ่มเข้าชื่อเสนอกฏหมาย</b></p>
+            <p><b>ขั้นตอนที่ 3</b>วินิฉัยการเงิน</p>
           </v-card-title>
         </v-card>
       </v-timeline-item>
       <!-- <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 5 ? '#28a745' : '#e4e4e4'"
+        :color="status == 7 ? '#28a745' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
-            <p><b>ขั้นตอนที่ 5</b> บรรจุเข้าว่าละการประชุม</p>
+            <p><b>ขั้นตอนที่ 4</b>นายกพิจารณา</p>
           </v-card-title>
         </v-card>
       </v-timeline-item> -->
+      <v-timeline-item
+        :small="true"
+        right="right"
+        :color="status == 8 ? '#28a745' : '#e4e4e4'"
+      >
+        <v-card class="elevation-2">
+          <v-card-title class="headline">
+            <p><b>ขั้นตอนที่ 5</b>รับฟังความคิดเห็น ตามมาตรา 77</p>
+          </v-card-title>
+        </v-card>
+      </v-timeline-item>
     </v-timeline>
 
     <v-timeline v-else :dense="true">
       <v-timeline-item
         :small="true"
         right="right"
-        :color="status == 12 ? '#FF0000' : '#e4e4e4'"
+        :color="status == 9 ? '#FF0000' : '#e4e4e4'"
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
             <p>
-              <b>ไม่ผ่านอารอนุมัติ หมวด 3 หมวด 5</b>
+              <b>บรรจุระเบียบวาระ</b>
             </p>
           </v-card-title>
         </v-card>

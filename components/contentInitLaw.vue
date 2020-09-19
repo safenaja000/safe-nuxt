@@ -1,10 +1,9 @@
 <template>
-  <div
-    v-if="post != null"
-    class="col-lg-12 rounded"
-    style="background-color: #ffffff;"
-  >
-    <h3 class="text-center my-3">
+  <div v-if="post != null" class="col-lg-12 rounded" style="background-color: #ffffff;">
+    <div class="text-center">
+      <img class="text-center" src="@/assets/images/55444.png" alt />
+    </div>
+    <!-- <h3 class="text-center my-3">
       <b>{{ post.law_content_1 }}</b>
     </h3>
     <b>
@@ -19,14 +18,12 @@
         {{ post.law_content_4 ? post.law_content_4 : 'ความเห็นอื่นๆ (ถ้ามี)' }}
       </p>
       <p>ความเห็นอื่นๆ (ถ้ามี)</p>
-    </b>
+    </b>-->
     <hr />
     <h4>ผู้สร้าง: {{ post.proposer_name }}</h4>
     <hr />
     <h4>
-      ผู้สนับสนุน: {{ post.no_of_supporter }}/{{
-        post.law_status == 1 ? 20 : 10000
-      }}
+      ผู้สนับสนุน: {{ post.no_of_supporter }}
       คน
     </h4>
     <hr />
@@ -38,26 +35,33 @@
     <div v-if="isMember" class="ml-auto text-right">
       <div
         v-if="
-          post.law_status !== 12 &&
-          post.law_status !== 14 &&
-          post.law_status !== 4 &&
-          post.support !== false
+          post.law_status === 3
         "
         class="text-right d-inline-block"
         style="cursor: pointer;"
       >
         <a
           class="hvr-buzz-out"
-          title="โหวดเห็นด้วย"
-          @click="showConfirm(idcard, post.law_no)"
+          title="ยอมรับร่างกฏหมาย"
+          @click="showConfirmAccept(idcard, post.law_no)"
         >
-          <i
-            class="far fa-check-circle"
-            style="font-size: 50px; color: green;"
-          ></i>
+          <v-btn class="bg-success text-white"><b style="font-size: 18px;">ขอแจ้งความประสงค์ขอเข้าชื่อเสนอกฏหมายทางอิเลคโทนิค</b></v-btn>
         </a>
       </div>
       <div
+        v-if="
+          post.law_status !== 12 &&
+          post.law_status !== 14 &&
+          post.law_status !== 3
+        "
+        class="text-right d-inline-block"
+        style="cursor: pointer;"
+      >
+        <a class="hvr-buzz-out" title="โหวดเห็นด้วย" @click="showConfirm(idcard, post.law_no)">
+          <i class="far fa-check-circle" style="font-size: 50px; color: green;"></i>
+        </a>
+      </div>
+      <!-- <div
         v-if="
           post.law_status !== 12 &&
           post.law_status !== 14 &&
@@ -71,33 +75,50 @@
             style="font-size: 50px; color: red;"
           ></i>
         </a>
-      </div>
+      </div>-->
     </div>
-    <div v-else class="ml-auto text-right">
+    <div v-else v-app class="ml-auto text-right">
+      <v-menu>
+        <template v-slot:activator="{ on: menu, attrs }">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on: tooltip }">
+              <v-btn
+                color="primary"
+                dark
+                v-bind="attrs"
+                v-on="{ ...tooltip, ...menu }"
+              >Dropdown w/ Tooltip</v-btn>
+            </template>
+            <span>Im A ToolTip</span>
+          </v-tooltip>
+        </template>
+        <v-list>
+          <v-list-item v-for="(item, index) in items" :key="index" @click>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <div class="text-left">
+        <input type="file" class="custom-file" name id />
+      </div>
       <div class="text-right d-inline-block">
-        <a
-          class="hvr-buzz-out"
-          title="อนุมัติ"
-          @click="lawAcceptConfirm(post.law_no)"
-        >
-          <i
-            class="far fa-check-circle"
-            style="font-size: 50px; color: green;"
-          ></i>
+        <a class="hvr-buzz-out" title="อนุมัติ" @click="lawAcceptConfirm(post.law_no)">
+          <i class="far fa-check-circle" style="font-size: 50px; color: green;"></i>
         </a>
       </div>
-      <div class="text-right d-inline-block">
+      <!-- <div class="text-right d-inline-block">
         <a class="hvr-buzz-out" @click="lawUnAcceptConfirm(post.law_no)">
           <i
             class="fas fa-times-circle"
             style="font-size: 50px; color: red;"
           ></i>
         </a>
-      </div>
+      </div>-->
     </div>
     <hr />
     <div class="col-lg-12">
-      <Timeline :status="post.law_status" />
+      <Timeline v-if="post.law_status < 4" :status="post.law_status" />
+      <Timeline2 v-else :status="post.law_status" />
     </div>
     <!-- <div class="row">
       <div class="col-lg-6">
@@ -126,9 +147,11 @@
 
 <script>
 import Swal from 'sweetalert2'
+import Timeline2 from '@/components/timeline2'
 import Timeline from '@/components/timeline'
 export default {
   components: {
+    Timeline2,
     Timeline,
   },
   props: {
@@ -137,24 +160,33 @@ export default {
   },
   data() {
     return {
-      idcard: '',
+      idcard: '5555555',
+      items: [
+        { title: 'กำลังเข้าชื่อ' },
+        { title: 'กำลังตรวจสอบ หมวด 3 และ 5' },
+        { title: 'ตรวจสอบการใช้งบประมาณ' },
+        { title: 'นายกพิจารณา' },
+        { title: 'ประกาศตาม มาตรา 77' },
+        { title: 'เข้าที่ประชุมสภา' },
+      ],
     }
-  },
-  beforeMount() {
-    if (localStorage.getItem('idcard') !== '') {
-      this.idcard = localStorage.getItem('idcard')
-    }
+    // },
+    // beforeMount() {
+    //   if (localStorage.getItem('idcard') !== '') {
+    //     this.idcard = localStorage.getItem('idcard')
+    //   }
   },
   methods: {
     showConfirm(cardid, id) {
       Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'ร่วมส่งคำร้องใช่หรือไม่',
+        // text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Send it!',
+        cancelButtonText: 'ยกเลิก',
+        confirmButtonText: 'ตกลง',
       }).then((result) => {
         if (result.value) {
           Swal.fire('Send!', 'Your request Successful', 'success')
@@ -162,17 +194,41 @@ export default {
         }
       })
     },
+    showConfirmAccept(cardid, id) {
+      Swal.fire({
+        title: 'ร่วมส่งคำร้องใช่หรือไม่',
+        // text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'ยกเลิก',
+        confirmButtonText: 'ตกลง',
+      }).then((result) => {
+        if (result.value) {
+          Swal.fire('Send!', 'Your request Successful', 'success')
+          this.gotoStatus(id)
+        }
+      })
+    },
+    async gotoStatus(id) {
+      const res = await this.$axios.$post(`/fast_update`, {
+        law_status: 4,
+        law_no: id,
+      })
+      console.log(res)
+      console.log(id)
+    },
     async postAccept(cardid, id) {
       const res = await this.$axios.$post(`/law/${id}`, {
         supporter_idcard: cardid,
       })
-      console.log(res)
+      console.log(id)
     },
     lawAcceptConfirm(id) {
       Swal.fire({
-        title: 'Enter your topic',
-        input: 'text',
-        showCancelButton: true,
+        title: 'ยืนยันการส่ง',
+          showCancelButton: true,
         inputValidator: (value) => {
           if (!value) {
             return 'You need to write something!'

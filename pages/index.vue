@@ -176,7 +176,7 @@ export default {
     ContentInitLaw,
   },
   async asyncData({ $axios }) {
-    const res = await $axios.$get('/law')
+    const res = await $axios.$get('/law?type=4')
     const data = res.data.filter(
       (law) =>
         law.law_status === 1 ||
