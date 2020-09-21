@@ -18,6 +18,15 @@
             :items="users"
             :search="search"
           >
+            <template v-slot:item.user_img="{ item }">
+              <a :href="item.user_img" target="_blank"
+                ><img
+                  class="img img-fluid rounded"
+                  :src="item.user_img"
+                  width="60px"
+                  alt=""
+              /></a>
+            </template>
             <template v-slot:item.edit="{ item }">
               <v-btn color="success" @click="clicked(item.id_card)"
                 >Approve</v-btn
@@ -43,6 +52,7 @@ export default {
   data() {
     return {
       headers: [
+        { text: 'image', value: 'user_img', align: 'center', width: '2em' },
         { text: 'username', value: 'username', align: 'center', width: '1em' },
         { text: 'name', value: 'name', align: 'left', width: '3em' },
         {

@@ -250,7 +250,7 @@ export default {
     },
     lawAcceptConfirm(id) {
       Swal.fire({
-        title: 'ยืนยันการส่ง',
+        title: 'ยืนยันการอนุมัติ',
         showCancelButton: true,
       }).then((result) => {
         this.lawCheck(true, id, "35")
