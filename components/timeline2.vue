@@ -59,7 +59,7 @@
       >
         <v-card class="elevation-2">
           <v-card-title class="headline">
-            <p><b>ขั้นตอนที่ 5</b>รับฟังความคิดเห็น ตามมาตรา 77</p>
+            <p><b>ขั้นตอนที่ 4</b>รับฟังความคิดเห็น ตามมาตรา 77</p>
           </v-card-title>
         </v-card>
       </v-timeline-item>
