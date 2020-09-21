@@ -2,6 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
+        <h1 class="text-center">ยืนยันตัวบุคคล</h1>
+      </div>
+      <div class="col-12">
         <div class="text-center">
           <img :src="url" width="460px" alt />
         </div>
@@ -10,6 +13,7 @@
           method="post"
           enctype="multipart/form-data"
         >
+          <input class="form-control mb-2" type="text" readonly name="full_name" value="วรรธนัย สาธุพันธ์" />
           <input class="form-control" type="text" readonly name="id_card" value="1349900965669" />
           <v-text-field label="Laser ID" name="laser_id" single-line></v-text-field>
           <input class="mb-3" type="file" name="file" @change="onFileChange" />

@@ -29,7 +29,8 @@
           </button>
         </div>
       </nuxt-link>-->
-      <p>ยินดีต้อนรับ คุณวรรธนัย สาธุพันธ์</p>
+      <a class="nav-link text-dark">ยินดีต้อนรับ คุณวรรธนัย สาธุพันธ์</a>
+      <nuxt-link class="nav-link" to="/register">ออกจากระบบ</nuxt-link>
       <div class="mx-auto d-md-none d-lg-none d-sm-block">
         <nuxt-link to="/login">
           <button class="btn rounded-pill btn-danger bg-dangerdark px-5">

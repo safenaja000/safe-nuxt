@@ -181,7 +181,7 @@ export default {
   },
   data() {
     return {
-      idcard: '5555555',
+      idcard: '134990095669',
       items: [
         { title: 'กำลังเข้าชื่อ' },
         { title: 'กำลังตรวจสอบ หมวด 3 และ 5' },

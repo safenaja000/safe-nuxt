@@ -172,10 +172,10 @@
           </div>
         </div>
         <div class="col-lg-12 text-right">
-          <v-btn to="/"
+          <v-btn to="/registercomfirm"
             style="background-color: #f7f7f7; outline: none; border: none;"
             class="d-inline-block rounded-pill px-3 m-3 p-2"
-          >กดเพื่อส่งข้อมูล</v-btn>
+          >ขั้นตอนต่อไป</v-btn>
         </div>
       </div>
     </div>
